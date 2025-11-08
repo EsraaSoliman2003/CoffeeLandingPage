@@ -1,28 +1,66 @@
 {
   "home": "Home",
-  "about": "About",
-  "contact": "Contact",
-  "welcome": "Welcome to the Dashboard",
-  "settings": "Settings",
-  "logout": "Logout",
-
-  "welcomeMessage": "Welcome to My App",
-  "homeDescription": "This is the home page of your project",
-
-  "aboutTitle": "About Us",
-  "aboutDescription": "This is the About page. Learn more about what we do",
-
-  "notFoundMessage": "404 | Page Not Found",
-  "pageNotExist": "Page Not Exist",
-
-  "login": "Login",
-  "support": "Support",
-  "license": "License",
-  "DarkMode": "Dark Mode",
-  "LightMode": "Light Mode",
-  "email": "Email",
-  "password": "Password",
-
-  "profileTitle": "Bla Bla Bla",
-  "profileDescription": "Test Test Test"
+  "menu": "Coffee Menu",
+  "about": "About Us",
+  "contact": "Contact Us",
+  "shop": "Coffee Shop",
+  "hero_title": "Coffee\nThe Best For You",
+  "hero_view_menu": "View Menu",
+  "hero_features": [
+    "Natural Coffee",
+    "Fresh Milk",
+    "Special Recipes",
+    "Coffee Beans"
+  ],
+  "menu_learn_more": "Learn More",
+  "about_appstore": "App Store",
+  "about_googleplay": "Google Play",
+  "contact_lets_talk": "Let’s Talk",
+  "contact_reserve": "Want to Reserve a Table?",
+  "contact_button": "Contact Now",
+  "contact_our_services": "Our Services",
+  "contact_our_company": "Our Company",
+  "contact_address": "Address",
+  "contact_links_services": [
+    "Pricing",
+    "Tracking",
+    "Report a Bug",
+    "Terms of Services"
+  ],
+  "contact_links_company": ["About Us", "Careers", "Blog", "FAQ"],
+  "contact_address_lines": [
+    "123 Coffee Street",
+    "Cairo, Egypt",
+    "coffee@example.com",
+    "+20 100 000 0000"
+  ],
+  "americano_title": "Americano",
+  "americano_desc": "100% Natural Arabica or Robusta, 30 ml cup",
+  "cappuccino_title": "Cappuccino",
+  "cappuccino_desc": "Coffee 50%, milk 50%, 280 ml",
+  "menu_section_title": "Lorem Ipsum is simply dummy text of",
+  "menu_section_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.",
+  "menu_second_title": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  "menu_second_desc": "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  "about_title": "App is Available",
+  "about_desc": "Welcome to our app! Experience the best features with a sleek design and smooth performance. Access all your favorite content anytime, anywhere, and enjoy a seamless user experience.",
+  "app_store": "App Store",
+  "google_play": "Google Play",
+  "contact_section_label": "Let’s Talk",
+  "contact_title": "Want to Reserve a Table?",
+  "contact_btn": "Contact Now",
+  "contact_desc": "Welcome! We are here to assist you with reservations, inquiries, and any support you need. Reach out to us and we’ll get back to you promptly.",
+  "flavored_title": "Flavored",
+  "flavored_desc": "Wake up to something special.",
+  "services_title": "Our Services",
+  "services_list": ["Pricing", "Tracking", "Report a Bug", "Terms of Services"],
+  "company_title": "Our Company",
+  "company_list": ["About Us", "Careers", "Blog", "FAQ"],
+  "address_title": "Address",
+  "address_list": [
+    "123 Coffee Street",
+    "Cairo, Egypt",
+    "coffee@example.com",
+    "+20 100 000 0000"
+  ]
 }

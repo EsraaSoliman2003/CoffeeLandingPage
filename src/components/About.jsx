@@ -2,8 +2,11 @@ import React from "react";
 import AppPhoto1 from "../assets/AppPhoto1.png";
 import AppPhoto2 from "../assets/AppPhoto2.png";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 export default function About() {
+  const { t } = useTranslation();
+
   return (
     <section
       className="
@@ -16,7 +19,7 @@ export default function About() {
         <div className="w-[45%] md:w-[40%] -translate-y-6 md:-translate-y-10 drop-shadow-xl">
           <img
             src={AppPhoto1}
-            alt="App screen 1"
+            alt={t("about_title")}
             className="w-full h-auto object-cover rounded-[26px]"
           />
         </div>
@@ -24,23 +27,18 @@ export default function About() {
         <div className="w-[45%] md:w-[40%] translate-y-6 md:translate-y-10 drop-shadow-xl">
           <img
             src={AppPhoto2}
-            alt="App screen 2"
+            alt={t("about_title")}
             className="w-full h-auto object-cover rounded-[26px]"
           />
         </div>
       </div>
 
-      <div className="flex flex-col justify-center">
+      <div className="flex flex-col items-center justify-center">
         <h3 className="text-2xl md:text-3xl font-bold text-[#2a1b17]">
-          App is Available
+          {t("about_title")}
         </h3>
 
-        <p className="text-[#5e4a42] mt-3 leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-          reiciendis facere, debitis sapiente tempora excepturi, cupiditate
-          libero mollitia autem aliquam quos voluptas voluptatum nisi. Nihil
-          deleniti architecto aliquam fuga aperiam.
-        </p>
+        <p className="text-[#5e4a42] mt-3 leading-relaxed">{t("about_desc")}</p>
 
         <div className="mt-5 flex flex-wrap gap-3">
           <a
@@ -55,7 +53,7 @@ export default function About() {
             "
           >
             <FaApple className="w-5 h-5" />
-            App Store
+            {t("app_store")}
           </a>
 
           <a
@@ -70,7 +68,7 @@ export default function About() {
             "
           >
             <FaGooglePlay className="w-5 h-5" />
-            Google Play
+            {t("google_play")}
           </a>
         </div>
       </div>
