@@ -12,9 +12,7 @@ export default function About() {
         rounded-[28px] p-6 md:p-8
       "
     >
-      {/* 2/3: الصور */}
       <div className="relative flex items-center justify-center gap-6">
-        {/* الصورة الأولى (طالعة لفوق) */}
         <div className="w-[45%] md:w-[40%] -translate-y-6 md:-translate-y-10 drop-shadow-xl">
           <img
             src={AppPhoto1}
@@ -23,7 +21,6 @@ export default function About() {
           />
         </div>
 
-        {/* الصورة الثانية (نازلة لتحت) */}
         <div className="w-[45%] md:w-[40%] translate-y-6 md:translate-y-10 drop-shadow-xl">
           <img
             src={AppPhoto2}
@@ -33,7 +30,6 @@ export default function About() {
         </div>
       </div>
 
-      {/* 1/3: النص والأزرار */}
       <div className="flex flex-col justify-center">
         <h3 className="text-2xl md:text-3xl font-bold text-[#2a1b17]">
           App is Available

@@ -56,7 +56,6 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      {/* ✅ الغلاف الداخلي لتحديد العرض */}
       <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-4">
         <div className="flex flex-col items-start font-bold text-[#2a1b17] leading-[1.1]">
           <div className="flex items-center gap-[6px] text-[1.5rem]">

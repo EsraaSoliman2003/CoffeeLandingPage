@@ -21,7 +21,6 @@ export default function Hero() {
           max-w-[1200px] w-full
         "
       >
-        {/* النص */}
         <div>
           <h1
             className="
@@ -36,7 +35,6 @@ export default function Hero() {
             The Best For You
           </h1>
 
-          {/* الزر */}
           <div className="flex items-center gap-3 mt-[18px]">
             <a
               href="#menu"
@@ -52,7 +50,6 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* الأيقونات */}
           <div className="flex gap-4 mt-8">
             <div className="w-14 h-14 bg-[#f2e9e4] rounded-2xl flex items-center justify-center">
               <SiCoffeescript className="text-[#5b231a] w-7 h-7" />
@@ -69,7 +66,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* الصورة */}
         <div className="relative flex items-center justify-center">
           <div className="w-[500px] h-[500px] max-w-full">
             <img
