@@ -10,7 +10,7 @@ import bgPhoto from "../assets/bgPhoto.png";
 function DrinkCard({ img, titleKey, descKey, price }) {
   const { t } = useTranslation();
   return (
-    <article className="relative bg-white/40 rounded-[26px] shadow-[0_20px_40px_rgba(0,0,0,0.12)] px-6 pb-8 pt-20 overflow-visible text-center">
+    <article className="relative bg-white/40 rounded-[26px] shadow-[0_20px_40px_rgba(0,0,0,0.12)] px-6 pb-8 pt-20 overflow-visible text-center mb-20">
       <div className="absolute -top-12 left-1/2 -translate-x-1/2">
         <div className="w-28 h-28 md:w-32 md:h-32 rounded-full">
           <img

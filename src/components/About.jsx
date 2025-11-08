@@ -15,7 +15,7 @@ export default function About() {
         rounded-[28px] p-6 md:p-8
       "
     >
-      <div className="relative flex items-center justify-center gap-6">
+      <div className="relative flex items-center justify-center gap-6 mb-10">
         <div className="w-[45%] md:w-[40%] -translate-y-6 md:-translate-y-10 drop-shadow-xl">
           <img
             src={AppPhoto1}
@@ -40,7 +40,7 @@ export default function About() {
 
         <p className="text-secondary mt-3 leading-relaxed">{t("about_desc")}</p>
 
-        <div className="mt-5 flex flex-wrap gap-3">
+        <div className="mt-5 flex flex-wrap gap-3 justify-center">
           <a
             href="#app-store"
             className="

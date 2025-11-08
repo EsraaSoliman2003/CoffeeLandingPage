@@ -1,12 +1,14 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import logo from "../assets/logo.png";
 import { useTranslation } from "react-i18next";
+import { HiOutlineMenu } from "react-icons/hi";
+import "../styles/navbar-curtain.css";
 
 const linkBase =
   "relative no-underline text-primary font-semibold " +
   "opacity-85 hover:opacity-100 transition-colors " +
   "after:absolute after:left-0 after:-bottom-1 after:h-[2px] " +
-  "after:bg-current after:w-0 after:transition-all after:duration-300 hover:after:w-full";
+  "after:bg-current after:w-0 after:transition-all after:duration-150 hover:after:w-full";
 
 function NavA({ href, label, active, onClick }) {
   return (
@@ -21,8 +23,9 @@ function NavA({ href, label, active, onClick }) {
 }
 
 export default function Navbar() {
-  const [active, setActive] = useState("top");
+  const [menuOpen, setMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
+  const navRef = useRef(null);
 
   const toggleLang = () => {
     const newLang = i18n.language === "en" ? "ar" : "en";
@@ -35,25 +38,24 @@ export default function Navbar() {
     e.preventDefault();
     const el = document.querySelector(id === "#/" ? "#top" : id);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    setMenuOpen(false);
   }, []);
 
   useEffect(() => {
-    const ids = ["top", "menu", "about", "contact"];
-    const sections = ids
-      .map((id) => document.getElementById(id))
-      .filter(Boolean);
-    if (!sections.length) return;
-
-    const io = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        }),
-      { root: null, threshold: 0.5, rootMargin: "-10% 0px -10% 0px" }
-    );
-    sections.forEach((sec) => io.observe(sec));
-    return () => io.disconnect();
-  }, []);
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    };
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -67,34 +69,42 @@ export default function Navbar() {
               className="w-7 h-7 object-contain inline-block align-middle"
             />
           </div>
-          <small className="text-sm font-normal text-secondary mt-[-2px]">
-            {t("flavored_desc")}{" "}
-          </small>
         </div>
 
-        <nav className="flex items-center gap-[18px]">
+        <button
+          className="md:hidden text-2xl"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          {!menuOpen && <HiOutlineMenu size={35} />}
+        </button>
+
+        <nav
+          ref={navRef}
+          className={
+            "curtain-nav md:flex md:flex-row md:gap-[18px] md:p-0 md:shadow-none items-center"
+          }
+          data-open={menuOpen}
+          aria-expanded={menuOpen}
+        >
           <NavA
             href="#top"
             label={t("home")}
-            active={active === "top"}
             onClick={(e) => handleSmooth(e, "#top")}
           />
           <NavA
             href="#menu"
             label={t("menu")}
-            active={active === "menu"}
             onClick={(e) => handleSmooth(e, "#menu")}
           />
           <NavA
             href="#about"
             label={t("about")}
-            active={active === "about"}
             onClick={(e) => handleSmooth(e, "#about")}
           />
           <NavA
             href="#contact"
             label={t("contact")}
-            active={active === "contact"}
             onClick={(e) => handleSmooth(e, "#contact")}
           />
 

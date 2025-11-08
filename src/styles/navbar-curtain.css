@@ -1,0 +1,60 @@
+/* === Curtain menu (Mobile only) ======================================= */
+@media (max-width: 767.98px) {
+  .curtain-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    z-index: 50;
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      transform 320ms cubic-bezier(.2, .7, .2, 1),
+      opacity 260ms ease,
+      visibility 0ms linear 320ms;
+    will-change: transform, opacity;
+  }
+
+  .curtain-nav[data-open="true"] {
+    transform: scaleY(1);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+      transform 340ms cubic-bezier(.2, .7, .2, 1),
+      opacity 260ms ease,
+      visibility 0ms;
+  }
+}
+
+@media (min-width: 768px) {
+  .curtain-nav {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    padding: 0;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    box-shadow: none;
+    background: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .curtain-nav {
+    transition: none !important;
+  }
+}
