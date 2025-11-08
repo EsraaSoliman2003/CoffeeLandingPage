@@ -5,18 +5,28 @@ import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
 import bg from "./assets/bg.jpg";
 
-export default function App() {
-
+function FixedBackground() {
   return (
     <div
-      className="min-h-screen w-full bg-cover bg-center bg-no-repeat"
+      aria-hidden
+      className="fixed inset-0 -z-10"
       style={{
         backgroundImage: `url(${bg})`,
         backgroundSize: "cover",
+        backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
+        transform: "translateZ(0)",
+        willChange: "transform",
       }}
-    >
+    />
+  );
+}
+
+
+export default function App() {
+  return (
+    <div className="min-h-screen w-full relative">
+      <FixedBackground />
       <Navbar />
 
       <div
@@ -28,7 +38,7 @@ export default function App() {
         }}
       >
         <div className="wrap">
-          <div id="top" className="">
+          <div id="top">
             <Hero />
           </div>
 
