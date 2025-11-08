@@ -55,54 +55,57 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="sticky top-3 z-20 flex items-center justify-between px-6 py-4">
-      <div className="flex flex-col items-start font-bold text-[#2a1b17] leading-[1.1]">
-        <div className="flex items-center gap-[6px] text-[1.5rem]">
-          <span>Flavored</span>
-          <img
-            src={logo}
-            alt="logo"
-            className="w-7 h-7 object-contain inline-block align-middle"
-          />
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* ✅ الغلاف الداخلي لتحديد العرض */}
+      <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-4">
+        <div className="flex flex-col items-start font-bold text-[#2a1b17] leading-[1.1]">
+          <div className="flex items-center gap-[6px] text-[1.5rem]">
+            <span>Flavored</span>
+            <img
+              src={logo}
+              alt="logo"
+              className="w-7 h-7 object-contain inline-block align-middle"
+            />
+          </div>
+          <small className="text-sm font-normal text-[#5e4a42] mt-[-2px]">
+            Wake up to something special
+          </small>
         </div>
-        <small className="text-sm font-normal text-[#5e4a42] mt-[-2px]">
-          Wake up to something special
-        </small>
+
+        <nav className="flex items-center gap-[18px]">
+          <NavA
+            href="#top"
+            label="Home"
+            active={active === "top"}
+            onClick={(e) => handleSmooth(e, "#top")}
+          />
+          <NavA
+            href="#menu"
+            label="Coffee Menu"
+            active={active === "menu"}
+            onClick={(e) => handleSmooth(e, "#menu")}
+          />
+          <NavA
+            href="#about"
+            label="About Us"
+            active={active === "about"}
+            onClick={(e) => handleSmooth(e, "#about")}
+          />
+          <NavA
+            href="#contact"
+            label="Contact Us"
+            active={active === "contact"}
+            onClick={(e) => handleSmooth(e, "#contact")}
+          />
+
+          <a
+            href="#shop"
+            className="bg-[#300301] text-white px-[18px] py-[10px] rounded-full font-semibold shadow-[0_10px_18px_rgba(91,35,26,0.25)] hover:opacity-90"
+          >
+            Coffee Shop
+          </a>
+        </nav>
       </div>
-
-      <nav className="flex items-center gap-[18px]">
-        <NavA
-          href="#top"
-          label="Home"
-          active={active === "top"}
-          onClick={(e) => handleSmooth(e, "#top")}
-        />
-        <NavA
-          href="#menu"
-          label="Coffee Menu"
-          active={active === "menu"}
-          onClick={(e) => handleSmooth(e, "#menu")}
-        />
-        <NavA
-          href="#about"
-          label="About Us"
-          active={active === "about"}
-          onClick={(e) => handleSmooth(e, "#about")}
-        />
-        <NavA
-          href="#contact"
-          label="Contact Us"
-          active={active === "contact"}
-          onClick={(e) => handleSmooth(e, "#contact")}
-        />
-
-        <a
-          href="#shop"
-          className="bg-[#300301] text-white px-[18px] py-[10px] rounded-full font-semibold shadow-[0_10px_18px_rgba(91,35,26,0.25)] hover:opacity-90"
-        >
-          Coffee Shop
-        </a>
-      </nav>
     </header>
   );
 }
