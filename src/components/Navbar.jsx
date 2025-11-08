@@ -1,19 +1,108 @@
+import React, { useEffect, useState, useCallback } from "react";
+import logo from "../assets/logo.png";
 
-import React from 'react'
+const linkBase =
+  "relative no-underline text-[#2a1b17] font-semibold " +
+  "opacity-85 hover:opacity-100 transition-colors " +
+  "after:absolute after:left-0 after:-bottom-1 after:h-[2px] " +
+  "after:bg-current after:w-0 after:transition-all after:duration-300 hover:after:w-full";
 
-export default function Navbar(){
+function NavA({ href, label, active, onClick }) {
   return (
-    <header className="navbar card">
-      <div className="brand">
-        <div className="brand-icon"></div>
-        <div>Flavored <small>استيقظ على شيء مميز</small></div>
+    <a
+      href={href}
+      onClick={onClick}
+      className={`${linkBase} ${active ? "opacity-100 after:w-full" : ""}`}
+    >
+      {label}
+    </a>
+  );
+}
+
+export default function Navbar() {
+  const [active, setActive] = useState("top");
+
+  const handleSmooth = useCallback((e, id) => {
+    if (!id?.startsWith("#")) return;
+    e.preventDefault();
+    const el = document.querySelector(id === "#/" ? "#top" : id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
+
+  useEffect(() => {
+    const ids = ["top", "menu", "about", "contact"];
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    if (!sections.length) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      {
+        root: null,
+        threshold: 0.5,
+        rootMargin: "-10% 0px -10% 0px",
+      }
+    );
+
+    sections.forEach((sec) => io.observe(sec));
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <header className="sticky top-3 z-20 flex items-center justify-between px-6 py-4">
+      <div className="flex flex-col items-start font-bold text-[#2a1b17] leading-[1.1]">
+        <div className="flex items-center gap-[6px] text-[1.5rem]">
+          <span>Flavored</span>
+          <img
+            src={logo}
+            alt="logo"
+            className="w-7 h-7 object-contain inline-block align-middle"
+          />
+        </div>
+        <small className="text-sm font-normal text-[#5e4a42] mt-[-2px]">
+          Wake up to something special
+        </small>
       </div>
-      <nav className="nav">
-        <a href="#menu">قائمة القهوة</a>
-        <a href="#about">من نحن</a>
-        <a href="#contact">تواصل</a>
-        <a className="btn" href="#shop">متجر القهوة</a>
+
+      <nav className="flex items-center gap-[18px]">
+        <NavA
+          href="#top"
+          label="Home"
+          active={active === "top"}
+          onClick={(e) => handleSmooth(e, "#top")}
+        />
+        <NavA
+          href="#menu"
+          label="Coffee Menu"
+          active={active === "menu"}
+          onClick={(e) => handleSmooth(e, "#menu")}
+        />
+        <NavA
+          href="#about"
+          label="About Us"
+          active={active === "about"}
+          onClick={(e) => handleSmooth(e, "#about")}
+        />
+        <NavA
+          href="#contact"
+          label="Contact Us"
+          active={active === "contact"}
+          onClick={(e) => handleSmooth(e, "#contact")}
+        />
+
+        <a
+          href="#shop"
+          className="bg-[#300301] text-white px-[18px] py-[10px] rounded-full font-semibold shadow-[0_10px_18px_rgba(91,35,26,0.25)] hover:opacity-90"
+        >
+          Coffee Shop
+        </a>
       </nav>
     </header>
-  )
+  );
 }
