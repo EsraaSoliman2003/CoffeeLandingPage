@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 import { useTranslation } from "react-i18next";
 
 const linkBase =
-  "relative no-underline text-[#2a1b17] font-semibold " +
+  "relative no-underline text-primary font-semibold " +
   "opacity-85 hover:opacity-100 transition-colors " +
   "after:absolute after:left-0 after:-bottom-1 after:h-[2px] " +
   "after:bg-current after:w-0 after:transition-all after:duration-300 hover:after:w-full";
@@ -58,7 +58,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-4">
-        <div className="flex flex-col items-start font-bold text-[#2a1b17] leading-[1.1]">
+        <div className="flex flex-col items-start font-bold text-primary leading-[1.1]">
           <div className="flex items-center gap-[6px] text-[1.5rem]">
             <span> {t("flavored_title")}</span>
             <img
@@ -67,7 +67,7 @@ export default function Navbar() {
               className="w-7 h-7 object-contain inline-block align-middle"
             />
           </div>
-          <small className="text-sm font-normal text-[#5e4a42] mt-[-2px]">
+          <small className="text-sm font-normal text-secondary mt-[-2px]">
             {t("flavored_desc")}{" "}
           </small>
         </div>
@@ -100,14 +100,14 @@ export default function Navbar() {
 
           <a
             href="#shop"
-            className="bg-[#300301] text-white px-[18px] py-[10px] rounded-full font-semibold shadow-[0_10px_18px_rgba(91,35,26,0.25)] hover:opacity-90"
+            className="bg-bgDark text-white px-[18px] py-[10px] rounded-full font-semibold shadow-[0_10px_18px_rgba(91,35,26,0.25)] hover:opacity-90"
           >
             {t("shop")}
           </a>
 
           <button
             onClick={toggleLang}
-            className="ml-2 px-3 py-1 rounded-full border border-[#2a1b17] font-semibold"
+            className="ml-2 px-3 py-1 rounded-full border border-primary font-semibold"
           >
             {i18n.language === "en" ? "AR" : "EN"}
           </button>

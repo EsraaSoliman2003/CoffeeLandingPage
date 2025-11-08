@@ -5,36 +5,28 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Light mode
-        lightBg: "#f9fafb",
-        lightText: "#1e293b",
-
-        // Dark mode
-        darkBg: "#0f172a",
-        darkText: "#e2e8f0",
-
-        // Primary blue
-        primary: "#2563eb",
-        primaryHover: "#1d4ed8",
-
-        // Accent green
-        accentColor: "#10b981",
-        accentColorHover: "#059669",
-
-        // Neutral / secondary
-        grayText: "#64748b",
-        grayTextDark: "#94a3b8",
+        primary: "#2a1b17",
+        secondary: "#5e4a42",
+        accent: "#7b3b2e",
+        accentDark: "#5b231a",
+        white: "#ffffff",
+        bgLight: "#f2e9e4",
+        bgDark: "#300301",
       },
       boxShadow: {
-        navbar: "0 2px 4px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1)",
-        navbarDark:
-          "0 2px 4px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.4)",
+        soft: "0_10px_20px_rgba(0,0,0,0.18)",
+        hard: "0_14px_24px_rgba(91,35,26,0.25)",
+        deep: "0_18px_28px_rgba(58,11,9,0.35)",
       },
       transitionProperty: {
-        "navbar-opacity": "opacity, transform",
+        colors:
+          "color, background-color, border-color, text-decoration-color, fill, stroke",
+        width: "width",
       },
       transitionDuration: {
-        navbar: "300ms",
+        fast: "200ms",
+        normal: "300ms",
+        slow: "500ms",
       },
     },
   },

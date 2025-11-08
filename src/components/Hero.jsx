@@ -9,39 +9,37 @@ export default function Hero() {
   const { t } = useTranslation();
 
   return (
-    <section className="flex items-center justify-center px-7 py-10 min-h-screen bg-transparent">
-      <div className="grid grid-cols-1 md:grid-cols-[.8fr_1.2fr] gap-5 items-center max-w-[1200px] w-full">
-        <div className="relative flex items-center justify-center">
-          <div className="w-[500px] h-[500px] max-w-full">
+    <section className="flex items-center justify-center px-6 py-10 min-h-screen bg-transparent">
+      <div className="flex flex-col md:flex-row justify-between items-center w-full">
+        <div className="flex items-center justify-center">
+          <div className="w-full max-w-[500px]">
             <img
               src={HeroPhoto}
               alt="Coffee cup with heart art"
-              className="w-full h-full object-cover"
+              className="w-full h-auto object-cover rounded-2xl"
             />
           </div>
         </div>
-        <div className="text-center flex flex-col items-center">
-          <h1 className="text-[clamp(32px,4vw,56px)] leading-[1.1] mt-[10px] mb-[14px] text-[#2a1b17] font-bold whitespace-pre-line">
+        <div className="flex flex-col items-center text-center">
+          <h1 className="text-[clamp(32px,4vw,56px)] leading-[1.1] mt-4 mb-4 text-primary font-bold whitespace-pre-line">
             {t("hero_title")}
           </h1>
 
-          <div className="flex items-center gap-3 mt-[18px]">
-            <a
-              href="#menu"
-              className="inline-block text-white font-bold no-underline px-[40px] py-[12px] rounded-[30px] shadow-[0_14px_24px_rgba(91,35,26,0.25)] bg-gradient-to-b from-[#7b3b2e] to-[#5b231a]"
-            >
-              {t("hero_view_menu")}
-            </a>
-          </div>
+          <a
+            href="#menu"
+            className="inline-block text-white font-bold no-underline px-8 md:px-10 py-3 rounded-[30px] shadow-hard bg-gradient-to-b from-accent to-accentDark transition-colors duration-normal"
+          >
+            {t("hero_view_menu")}
+          </a>
 
-          <div className="flex gap-4 mt-8">
+          <div className="flex flex-wrap gap-4 mt-6">
             {[SiCoffeescript, TbCoffee, SiBuymeacoffee, GiCoffeeBeans].map(
               (Icon, idx) => (
                 <div
                   key={idx}
-                  className="w-14 h-14 bg-[#f2e9e4] rounded-2xl flex items-center justify-center"
+                  className="w-14 h-14 bg-bgLight rounded-2xl flex items-center justify-center"
                 >
-                  <Icon className="text-[#5b231a] w-7 h-7" />
+                  <Icon className="text-accentDark w-7 h-7" />
                 </div>
               )
             )}

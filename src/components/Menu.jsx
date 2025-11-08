@@ -21,27 +21,27 @@ function DrinkCard({ img, titleKey, descKey, price }) {
         </div>
       </div>
 
-      <div className="mt-2 text-[#2a1b17] font-extrabold text-lg">
+      <div className="mt-2 text-primary font-extrabold text-lg">
         {t(titleKey)}
       </div>
-      <p className="text-[#5e4a42] text-sm mt-1">{t(descKey)}</p>
+      <p className="text-secondary text-sm mt-1">{t(descKey)}</p>
 
       <div className="mt-4 flex items-center justify-center gap-3">
         <button
-          className="w-10 h-10 rounded-[30px] grid place-items-center bg-[#f2e9e4] text-[#5b231a] hover:opacity-90 transition"
+          className="w-10 h-10 rounded-[30px] grid place-items-center bg-bgLight text-accentDark hover:opacity-90 transition"
           aria-label="Add to cart"
         >
           <LuShoppingCart className="w-5 h-5" />
         </button>
         <button
-          className="w-10 h-10 rounded-[30px] grid place-items-center bg-[#f2e9e4] text-[#5b231a] hover:opacity-90 transition"
+          className="w-10 h-10 rounded-[30px] grid place-items-center bg-bgLight text-accentDark hover:opacity-90 transition"
           aria-label="Add to favorites"
         >
           <LuHeart className="w-5 h-5" />
         </button>
       </div>
 
-      <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-[#2a1b17] text-white font-black px-4 py-2 rounded-full shadow-[0_10px_20px_rgba(0,0,0,0.18)]">
+      <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-primary text-white font-black px-4 py-2 rounded-full shadow-soft">
         {price}
       </div>
     </article>
@@ -67,13 +67,13 @@ export default function Menu() {
           price="$2.50"
         />
         <div className="flex flex-col text-center items-center justify-center">
-          <h3 className="text-2xl md:text-3xl font-extrabold text-[#2a1b17]">
+          <h3 className="text-2xl md:text-3xl font-extrabold text-primary">
             {t("menu_section_title")}
           </h3>
-          <p className="text-[#5e4a42] mt-3">{t("menu_section_desc")}</p>
+          <p className="text-secondary mt-3">{t("menu_section_desc")}</p>
           <a
             href="#about"
-            className="mt-5 w-max px-5 py-3 rounded-[30px] font-bold no-underline text-white bg-gradient-to-b from-[#7b3b2e] to-[#5b231a] shadow-[0_14px_24px_rgba(91,35,26,0.25)] hover:opacity-90 transition"
+            className="mt-5 w-max px-5 py-3 rounded-[30px] font-bold no-underline text-white bg-gradient-to-b from-accent to-accentDark shadow-[hard] hover:opacity-90 transition"
           >
             {t("menu_learn_more")}
           </a>
@@ -82,13 +82,13 @@ export default function Menu() {
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
         <div className="flex flex-col items-center">
-          <h3 className="text-2xl md:text-3xl font-extrabold text-[#2a1b17]">
+          <h3 className="text-2xl md:text-3xl font-extrabold text-primary">
             {t("menu_second_title")}
           </h3>
-          <p className="text-[#5e4a42] mt-3">{t("menu_second_desc")}</p>
+          <p className="text-secondary mt-3">{t("menu_second_desc")}</p>
           <a
             href="#contact"
-            className="mt-5 w-max px-5 py-3 rounded-[30px] font-bold no-underline text-white bg-gradient-to-b from-[#7b3b2e] to-[#5b231a] shadow-[0_14px_24px_rgba(91,35,26,0.25)] hover:opacity-90 transition"
+            className="mt-5 w-max px-5 py-3 rounded-[30px] font-bold no-underline text-white bg-gradient-to-b from-accent to-accentDark shadow-[hard] hover:opacity-90 transition"
           >
             {t("menu_learn_more")}
           </a>

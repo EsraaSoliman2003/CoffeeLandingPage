@@ -3,17 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --bg: #efe9e5;
-  --panel: rgba(255, 255, 255, 0.7);
   --text: #2a1b17;
-  --sub: #5e4a42;
-  --brand: #300301;
-  --brand-2: #7b3b2e;
-  --chip: #f2e9e4;
-  --shadow: 0 20px 40px rgba(0, 0, 0, .12);
-  --radius: 24px;
-  --radius-lg: 30px;
-  --gap: 20px;
   --maxw: 1120px;
 }
 
@@ -39,4 +29,3 @@ body {
   margin: 0px auto;
   padding: 12px
 }
-

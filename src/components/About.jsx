@@ -34,11 +34,11 @@ export default function About() {
       </div>
 
       <div className="flex flex-col items-center justify-center">
-        <h3 className="text-2xl md:text-3xl font-bold text-[#2a1b17]">
+        <h3 className="text-2xl md:text-3xl font-bold text-primary">
           {t("about_title")}
         </h3>
 
-        <p className="text-[#5e4a42] mt-3 leading-relaxed">{t("about_desc")}</p>
+        <p className="text-secondary mt-3 leading-relaxed">{t("about_desc")}</p>
 
         <div className="mt-5 flex flex-wrap gap-3">
           <a
@@ -47,8 +47,8 @@ export default function About() {
               inline-flex items-center gap-2
               px-4 py-3 rounded-[30px] font-semibold no-underline
               text-white
-              bg-gradient-to-b from-[#7b3b2e] to-[#5b231a]
-              shadow-[0_14px_24px_rgba(91,35,26,0.25)]
+              bg-gradient-to-b from-accent to-accentDark
+              shadow-[hard]
               hover:opacity-90 transition
             "
           >
@@ -62,8 +62,8 @@ export default function About() {
               inline-flex items-center gap-2
               px-4 py-3 rounded-[30px] font-semibold no-underline
               text-white
-              bg-gradient-to-b from-[#7b3b2e] to-[#5b231a]
-              shadow-[0_14px_24px_rgba(91,35,26,0.25)]
+              bg-gradient-to-b from-accent to-accentDark
+              shadow-[hard]
               hover:opacity-90 transition
             "
           >
