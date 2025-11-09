@@ -3,7 +3,7 @@ import Hero from "./components/Hero.jsx";
 import Menu from "./components/Menu.jsx";
 import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
-import bg from "./assets/bg.jpg";
+import bg from "./assets/bg.webp";
 
 function FixedBackground() {
   return (
@@ -15,8 +15,8 @@ function FixedBackground() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        transform: "translateZ(0)",
-        willChange: "transform",
+        // transform: "translateZ(0)",
+        // willChange: "transform",
       }}
     />
   );
@@ -32,9 +32,9 @@ export default function App() {
       <div
         className="min-h-screen w-full"
         style={{
-          background: "rgba(255, 255, 255, 0.5)",
-          backdropFilter: "blur(5px)",
-          WebkitBackdropFilter: "blur(10px)",
+          background: "rgba(255, 255, 255, 0.8)",
+          // backdropFilter: "blur(5px)",
+          // WebkitBackdropFilter: "blur(10px)",
         }}
       >
         <div className="wrap">

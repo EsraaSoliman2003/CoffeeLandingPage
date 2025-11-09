@@ -51,6 +51,8 @@ export default function Contact() {
             <img
               src={logo}
               alt={t("flavored_title")}
+              loading="lazy"
+              decoding="async"
               className="w-7 h-7 object-contain inline-block align-middle"
             />
           </div>

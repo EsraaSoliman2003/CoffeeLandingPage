@@ -22,7 +22,7 @@
       transform 320ms cubic-bezier(.2, .7, .2, 1),
       opacity 260ms ease,
       visibility 0ms linear 320ms;
-    will-change: transform, opacity;
+    /* will-change: transform, opacity; */
   }
 
   .curtain-nav[data-open="true"] {

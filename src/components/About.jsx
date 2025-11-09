@@ -16,18 +16,22 @@ export default function About() {
       "
     >
       <div className="relative flex items-center justify-center gap-6 mb-10">
-        <div className="w-[45%] md:w-[40%] -translate-y-6 md:-translate-y-10 drop-shadow-xl">
+        <div className="w-[45%] md:w-[40%] -translate-y-6 md:-translate-y-10">
           <img
             src={AppPhoto1}
             alt={t("about_title")}
+            loading="lazy"
+            decoding="async"
             className="w-full h-auto object-cover rounded-[26px]"
           />
         </div>
 
-        <div className="w-[45%] md:w-[40%] translate-y-6 md:translate-y-10 drop-shadow-xl">
+        <div className="w-[45%] md:w-[40%] translate-y-6 md:translate-y-10">
           <img
             src={AppPhoto2}
             alt={t("about_title")}
+            loading="lazy"
+            decoding="async"
             className="w-full h-auto object-cover rounded-[26px]"
           />
         </div>

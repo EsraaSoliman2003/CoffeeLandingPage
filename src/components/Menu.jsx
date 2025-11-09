@@ -10,12 +10,14 @@ import bgPhoto from "../assets/bgPhoto.png";
 function DrinkCard({ img, titleKey, descKey, price }) {
   const { t } = useTranslation();
   return (
-    <article className="relative bg-white/40 rounded-[26px] shadow-[0_20px_40px_rgba(0,0,0,0.12)] px-6 pb-8 pt-20 overflow-visible text-center mb-20">
+    <article className="relative bg-white/40 rounded-[26px] shadow-[0_4px_10px_rgba(0,0,0,0.08)] px-6 pb-8 pt-20 overflow-visible text-center mb-20">
       <div className="absolute -top-12 left-1/2 -translate-x-1/2">
         <div className="w-28 h-28 md:w-32 md:h-32 rounded-full">
           <img
             src={img}
             alt={t(titleKey)}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover"
           />
         </div>
@@ -103,6 +105,8 @@ export default function Menu() {
             <img
               src={cupCoffee}
               alt="Coffee cup"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.25)]"
             />
           </div>

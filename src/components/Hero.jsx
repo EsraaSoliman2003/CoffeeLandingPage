@@ -16,6 +16,8 @@ export default function Hero() {
             <img
               src={HeroPhoto}
               alt="Coffee cup with heart art"
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto object-cover rounded-2xl"
             />
           </div>
